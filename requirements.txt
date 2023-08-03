@@ -3,4 +3,3 @@ numpy
 fastapi
 scikit-learn
 uvicorn
-ast
