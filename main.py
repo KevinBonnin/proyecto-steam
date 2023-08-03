@@ -3,7 +3,7 @@ from fastapi import FastAPI
 import uvicorn
 import ast
 
-inf = pd.read_csv('Proyecto Integrador I\proyecto-steam\steam_games.csv')
+inf = pd.read_csv('Proyecto Integrador I/proyecto-steam/steam_games.csv')
 
 inf['año'] = inf['año'].astype(str)
 
