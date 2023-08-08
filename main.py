@@ -9,7 +9,7 @@ inf['Year'] = inf['Year'].astype(str)
 
 app = FastAPI()
 
-@app.get("/genero/{Year}")
+@app.get("/genero/{Year}/los 5 géneros más vendidos")
 def genero( Year: str ):
     juegos = (inf[inf['Year'] == Year])
     juegos['genres'] = juegos['genres'].apply(lambda x: ast.literal_eval(x) if pd.notnull(x) else [])
