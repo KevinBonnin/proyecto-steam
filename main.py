@@ -15,13 +15,13 @@ def genero( Year: str ):
     juegos['genres'] = juegos['genres'].apply(lambda x: ast.literal_eval(x) if pd.notnull(x) else [])
     generos_desglosados = juegos['genres'].explode()
     generos_mas_vendidos = generos_desglosados.value_counts().head(5).index.tolist()
-    return {'Los generos mas vendidos en el Year': Year, 'son': generos_mas_vendidos}
+    return {'Los generos mas vendidos en el año': Year, 'son': generos_mas_vendidos}
 
 @app.get("/juegos/{Year}")
 def juegos( Year: str ):
     filtro = (inf[inf['Year'] == Year])
     juego = filtro[['title']].values.tolist()
-    return {'Los juegos que se lanzaron en el Year': Year, 'son': juego}
+    return {'Los juegos que se lanzaron en el año': Year, 'son': juego}
 
 @app.get("/specs/{Year}")
 def specs( Year: str ):
@@ -29,13 +29,13 @@ def specs( Year: str ):
     juegos['specs'] = juegos['specs'].apply(lambda x: ast.literal_eval(x) if pd.notnull(x) else [])
     especificaciones_desglosadas = juegos['specs'].explode()
     especificaciones_mas_repetidas = especificaciones_desglosadas.value_counts().head(5).index.tolist()
-    return {'Las especificaciones mas repetidas en el Year': Year, 'son': especificaciones_mas_repetidas}
+    return {'Las especificaciones mas repetidas en el año': Year, 'son': especificaciones_mas_repetidas}
 
 @app.get("/earlyacces/{Year}")
 def earlyacces( Year: str ):
     juegos_early_access = inf[(inf['Year'] == Year) & (inf['early_access'] == True)]
     cantidad_juegos_early_access = juegos_early_access.shape[0]
-    return {'La cantidad de juegos lanzados en el Year': Year, 'es de': cantidad_juegos_early_access}
+    return {'La cantidad de juegos lanzados en el año': Year, 'es de': cantidad_juegos_early_access}
 
 @app.get("/sentiment/{Year}")
 def sentiment( Year: str ):
