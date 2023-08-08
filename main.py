@@ -121,5 +121,5 @@ def prediccion(genero: Genero, especificaciones: Especificaciones):
     for valor in Especificaciones:
         datos[valor.value] = [1 if valor == especificaciones else 0]
     df = pd.DataFrame(datos)
-    precio = modelo.prediccion(df)
+    precio = modelo.predict(df)
     return {'precio predecido': precio, 'RMSE del modelo': 10.773332764246002}
