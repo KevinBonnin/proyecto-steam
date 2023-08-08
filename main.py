@@ -115,11 +115,13 @@ def metascore( Year: str ):
 
 @app.get("/modelo de prediccion")
 def prediccion(genero: Genero, especificaciones: Especificaciones):
-    datos = []
+    datos = {[]}
     for valor in Genero:
         datos[valor.value] = [1 if valor == genero else 0]
+        
     for valor in Especificaciones:
         datos[valor.value] = [1 if valor == especificaciones else 0]
+        
     df = pd.DataFrame(datos)
     precio = modelo.predict(df)
     return {'precio predecido': precio, 'RMSE del modelo': 10.773332764246002}
