@@ -113,7 +113,7 @@ def metascore( Year: str ):
     juegoss = top_juegos_metascore[['title', 'metascore']]
     return {'Los juegos con mayor metascore y sus respectivos valores son': juegoss}
 
-@app.get("/modelo de prediccion{genero}{especificaciones}")
+@app.get("/modelo de prediccion")
 def prediccion(genero: Genero, especificaciones: Especificaciones):
     datos = {}
     for valor in Genero:
@@ -124,4 +124,4 @@ def prediccion(genero: Genero, especificaciones: Especificaciones):
         
     df = pd.DataFrame(datos)
     precio = modelo.predict(df)
-    return {'precio predecido': precio, 'RMSE del modelo': 10.773332764246002}
+    return {'precio predecido': precio[0], 'RMSE del modelo': 10.773332764246002}
