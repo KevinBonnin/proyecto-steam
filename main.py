@@ -113,7 +113,7 @@ def metascore( Year: str ):
     juegoss = top_juegos_metascore[['title', 'metascore']]
     return {'Los juegos con mayor metascore y sus respectivos valores son': juegoss}
 
-@app.get("/modelo de prediccion")
+@app.get("/modelo de prediccion{genero}{especificaciones}")
 def prediccion(genero: Genero, especificaciones: Especificaciones):
     datos = {}
     for valor in Genero:
