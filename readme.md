@@ -37,4 +37,4 @@ En los gets se realizron códigos capaces de cumplir con las consignas puestas p
 
 Repositorio de GitHub: https://github.com/KevinBonnin/proyecto-steam.git
 Render: https://proyecto-steam.onrender.com/docs#/
-Video: 
+Video: https://www.youtube.com/watch?v=XAHsTh-ZiOc
